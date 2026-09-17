@@ -44,13 +44,26 @@
         .back-title { font-family: Marhey, cursive; font-size: 44px !important; letter-spacing: 1px !important; }
         .dots { direction: rtl; }
         @media (max-width: 700px) {
-            .memory-book { padding: 18px 10px 14px; }
+            .memory-book { min-height: 100svh; padding: 12px 8px 10px; }
+            .site-header { margin-bottom: 6px; }
+            .site-header h1 { font-size: 20px; }
+            .kicker { font-size: 9px; letter-spacing: 1px; }
             .book-area { min-height: calc(100vh - 145px); gap: 5px; }
-            .book { width: calc(100vw - 56px); height: min(540px, calc(100vh - 150px)); min-height: 400px; }
-            .inside-page { padding: 32px 22px 20px; }
+            .book { width: calc(100vw - 56px); height: min(540px, calc(100svh - 135px)); min-height: 340px; }
+            .inside-page { padding: 30px 20px 18px; }
+            .inside-page h2 { font-size: clamp(24px, 7vw, 36px); line-height: 1.35; margin: 36px 0 14px; }
+            .page-text { font-size: clamp(11px, 3.2vw, 14px); line-height: 1.8; }
+            .inside-page blockquote { font-size: clamp(12px, 3.7vw, 16px); line-height: 1.5; margin: 24px 0 12px; }
+            .memory-list { margin: 22px 0; }
+            .memory-list p { padding: 11px 0; font-size: clamp(11px, 3.2vw, 14px); }
+            .photo-frame { height: min(380px, calc(100svh - 245px)); min-height: 225px; }
+            .caption { margin-top: 12px; font-size: 11px; }
         }
         @media (max-width: 700px) and (max-height: 600px) {
-            .book { min-height: 370px; }
+            .book { min-height: 320px; }
+            .inside-page { padding-top: 24px; }
+            .inside-page h2 { margin-top: 26px; font-size: clamp(22px, 6vw, 30px); }
+            .photo-frame { min-height: 190px; }
         }
     </style>
     <dialog class="photo-viewer" id="photoViewer"><button class="photo-viewer-close" id="closePhotoViewer" type="button" aria-label="إغلاق الصورة">×</button><img id="fullPhoto" alt="الصورة بالحجم الكامل"></dialog>
