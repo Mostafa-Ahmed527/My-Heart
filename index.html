@@ -1,0 +1,59 @@
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ذكريات | دفتر اللحظات</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Marhey:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="memory-book">
+        <header class="site-header">
+            <div class="mini-mark">✦</div>
+            <div><p class="kicker">دفتر اللحظات الجميلة</p><h1>ذكريات</h1></div>
+        </header>
+        <section class="book-area">
+            <button class="page-arrow arrow-right" id="nextPage" aria-label="الصفحة التالية">←</button>
+            <div class="book">
+                <article class="cover page"><div class="cover-border"><span class="cover-star">✦</span><p class="cover-small">أجمل ما نحتفظ به</p><h2>ذكريات</h2><div class="cover-line"></div><p class="cover-note">كل لحظة حلوة تستاهل صفحة</p><span class="cover-date">2026 — 2027</span></div></article>
+                <article class="inside-page page"><div class="page-number">٠١</div><p class="page-kicker">رسالة من القلب</p><h2>لحظات صغيرة<br><em>تعمل فرق كبير</em></h2><p class="page-text">في حاجات بسيطة بنفتكرها طول العمر: ضحكة من القلب، مشوار من غير تخطيط، وكلام اتقال في وقته بالضبط.</p><blockquote>“الذكريات هي الطريقة التي نحتفظ بها بالأشياء التي نحبها.”</blockquote></article>
+                <article class="inside-page photo-page page"><div class="page-number">٠٢</div><p class="page-kicker">صورة من الذاكرة</p><div class="photo-frame has-image"><img class="memory-photo" src="images/WhatsApp Image 2026-09-17 at 11.30.33 PM (1).jpeg" alt="لحظة من الذكريات" tabindex="0"></div><p class="caption" contenteditable="true">لحظة صغيرة، بس غالية...</p></article>
+                <article class="inside-page photo-page page"><div class="page-number">٠٣</div><p class="page-kicker">صورة من الذاكرة</p><div class="photo-frame has-image"><img class="memory-photo" src="images/WhatsApp Image 2026-09-17 at 11.30.33 PM.jpeg" alt="لحظة من الذكريات" tabindex="0"></div><p class="caption" contenteditable="true">تفصيلة لسه عايشة في القلب...</p></article>
+                <article class="inside-page photo-page page"><div class="page-number">٠٤</div><p class="page-kicker">صورة من الذاكرة</p><div class="photo-frame has-image"><img class="memory-photo" src="images/WhatsApp Image 2026-09-17 at 11.30.34 PM.jpeg" alt="لحظة من الذكريات" tabindex="0"></div><p class="caption" contenteditable="true">ذكرى تستاهل تتحفظ...</p></article>
+                <article class="inside-page page"><div class="page-number">٠٥</div><p class="page-kicker">يوم لا يُنسى</p><h2>أول مرة<br><em>مش هتتنسي</em></h2><div class="memory-list"><p><span>01</span> المكان: سنتر اوميجا</p><p><span>02</span> التاريخ: 15/8/2026</p><p><span>03</span> الاسم: LOOKA</p></div><p class="page-text short">اكتب تفاصيل اليوم اللي نفسك تفتكره دايمًا...</p></article>
+                <article class="back-cover page"><div class="back-mark">✦</div><p class="back-title">النهاية</p></article>
+            </div>
+            <button class="page-arrow arrow-left" id="prevPage" aria-label="الصفحة السابقة">→</button>
+        </section>
+        <footer class="book-footer"><span id="pageLabel">الغلاف</span><div class="dots" id="pageDots"></div><span>اقلب الصفحات واحتفظ بلحظاتك</span></footer>
+    </main>
+    <style>
+        .photo-frame { width: min(100%, 300px); height: 380px; aspect-ratio: 3 / 4; margin: 18px auto 0; }
+        .photo-frame img { object-fit: contain; background: #eee3d1; }
+        .memory-photo { cursor: zoom-in; }
+        .photo-viewer { width: min(92vw, 900px); height: min(92vh, 900px); padding: 42px 18px 18px; border: 0; background: rgba(35, 25, 21, .94); box-shadow: 0 18px 60px rgba(35, 25, 21, .45); }
+        .photo-viewer::backdrop { background: rgba(38, 27, 21, .76); }
+        .photo-viewer img { display: block; width: 100%; height: 100%; object-fit: contain; }
+        .photo-viewer-close { position: absolute; top: 8px; right: 12px; width: 34px; height: 34px; border: 0; border-radius: 50%; background: #f9ecd6; color: var(--rust); font-size: 27px; line-height: 1; cursor: pointer; }
+        .photo-viewer-close:hover { background: var(--rust); color: #fff; }
+        .back-title { font-family: Marhey, cursive; font-size: 44px !important; letter-spacing: 1px !important; }
+        .dots { direction: rtl; }
+        @media (max-width: 700px) {
+            .memory-book { padding: 18px 10px 14px; }
+            .book-area { min-height: calc(100vh - 145px); gap: 5px; }
+            .book { width: calc(100vw - 72px); height: min(455px, calc(100vh - 205px)); min-height: 360px; }
+            .inside-page { padding: 32px 24px 20px; }
+        }
+        @media (max-width: 700px) and (max-height: 600px) {
+            .book { min-height: 330px; }
+        }
+    </style>
+    <dialog class="photo-viewer" id="photoViewer"><button class="photo-viewer-close" id="closePhotoViewer" type="button" aria-label="إغلاق الصورة">×</button><img id="fullPhoto" alt="الصورة بالحجم الكامل"></dialog>
+    <script src="script.js"></script>
+</body>
+</html>
